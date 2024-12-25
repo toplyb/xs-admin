@@ -1,0 +1,58 @@
+{
+  "name": "basics-admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix --quiet",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "element-plus": "^2.9.1",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.3.0",
+    "vue": "^3.5.13",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.17.0",
+    "@iconify-json/material-symbols": "^1.2.12",
+    "@iconify/vue": "^4.2.0",
+    "@unocss/preset-attributify": "^0.65.3",
+    "@unocss/preset-icons": "^0.65.3",
+    "@unocss/preset-uno": "^0.65.3",
+    "@unocss/transformer-directives": "^0.65.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "less": "^4.2.1",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "unocss": "^0.65.3",
+    "unplugin-auto-import": "^0.19.0",
+    "unplugin-vue-components": "^0.28.0",
+    "vite": "^6.0.5",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,cjs,ts,vue}": [
+      "pnpm run lint:fix"
+    ],
+    "src/**/*.{html,json,css,less}": [
+      "npx prettier --write"
+    ]
+  }
+}
