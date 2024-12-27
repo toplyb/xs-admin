@@ -12,8 +12,28 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/',
-        name: 'index',
+        name: 'Index',
         component: () => import('@/views/index/index.vue'),
+      },
+      {
+        path: '/user',
+        name: 'User',
+        component: () => import('@/views/user/index.vue'),
+      },
+      {
+        path: '/user/add',
+        name: 'UserAdd',
+        component: () => import('@/views/user/add.vue'),
+      },
+      {
+        path: '/role',
+        name: 'Role',
+        component: () => import('@/views/role/index.vue'),
+      },
+      {
+        path: '/role/add',
+        name: 'RoleAdd',
+        component: () => import('@/views/role/add.vue'),
       },
     ],
   },

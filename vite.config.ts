@@ -20,7 +20,7 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
       dts: 'components.d.ts',
-      dirs: ['src/components'],
+      dirs: ['src/components', 'src/views'],
     }),
   ],
   resolve: {

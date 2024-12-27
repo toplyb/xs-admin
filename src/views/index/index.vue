@@ -1,13 +1,8 @@
 <template>
-  <div class="index-container">
-    index
-    <Icon class="index-icon" icon="hugeicons:audio-book-04"></Icon>
-  </div>
+  <div class="index-container"></div>
 </template>
 
-<script setup lang="ts">
-import { Icon } from '@iconify/vue';
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped>
 .index-container {

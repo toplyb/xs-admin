@@ -7,13 +7,29 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Add: typeof import('./src/views/user/add.vue')['default']
+    ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Header: typeof import('./src/views/layout/header/index.vue')['default']
+    HeaderNavbar: typeof import('./src/views/layout/headerNavbar/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HelloWorld1: typeof import('./src/components/HelloWorld1.vue')['default']
+    Index: typeof import('./src/views/index/index.vue')['default']
+    Layout: typeof import('./src/views/layout/index.vue')['default']
+    Login: typeof import('./src/views/login/index.vue')['default']
+    Role: typeof import('./src/views/role/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sidebar: typeof import('./src/views/layout/sidebar/index.vue')['default']
+    User: typeof import('./src/views/user/index.vue')['default']
   }
 }
