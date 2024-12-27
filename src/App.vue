@@ -4,4 +4,11 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="less">
+html,
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+</style>
