@@ -11,9 +11,17 @@
       </span>
     </div>
     <div class="header-right">
-      <span class="icon-container">
-        <Icon class="header-icon" icon="carbon:user-avatar"></Icon>
-      </span>
+      <el-dropdown>
+        <span class="icon-container">
+          <Icon class="header-icon" icon="carbon:user-avatar"></Icon>
+        </span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>设置</el-dropdown-item>
+            <el-dropdown-item @click="logout">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -21,8 +29,10 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { useSidebarStore } from '@/store/sidebar.ts';
+import { useUserStore } from '@/store/user.ts';
 
 const { state, handlerCollapse } = useSidebarStore();
+const { logout } = useUserStore();
 </script>
 
 <style scoped lang="less">
@@ -38,16 +48,28 @@ const { state, handlerCollapse } = useSidebarStore();
     -6px 6px 6px #dcdcdc,
     6px -6px 6px #e4e4e4;
 
+  .header-right {
+    margin-right: 24px;
+  }
+
   .icon-container {
     cursor: pointer;
     padding: 10px;
     color: #7a7a94;
+    user-select: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s linear;
 
     &:hover {
       color: #1b1b2a;
+      box-shadow:
+        6px 6px 10px #dcdcdc,
+        -6px -6px 10px #e4e4e4;
+      border-radius: 10px;
     }
-
-    transition: color 0.2s linear;
   }
 
   .header-icon {
