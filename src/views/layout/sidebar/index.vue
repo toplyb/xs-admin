@@ -5,6 +5,7 @@
         :collapse="state.isCollapse"
         :collapse-transition="false"
         :router="true"
+        :default-active="defaultActive"
       >
         <template v-for="menu in menuList">
           <template v-if="menu.children">
@@ -53,7 +54,15 @@
 import { Icon } from '@iconify/vue';
 import { useSidebarStore } from '@/store/sidebar.ts';
 
-const menuList = [
+export interface IMenu {
+  id: string;
+  name: string;
+  icon: string;
+  path?: string;
+  children?: IMenu[];
+}
+
+const menuList: IMenu[] = [
   {
     id: '1',
     name: '首页',
@@ -101,6 +110,10 @@ const menuList = [
 ];
 
 const { state } = useSidebarStore();
+const route = useRoute();
+const defaultActive = computed(() => {
+  return route.path;
+});
 </script>
 
 <style lang="less" scoped>
